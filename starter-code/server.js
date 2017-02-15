@@ -8,16 +8,26 @@
 const PORT = process.env.PORT || 3000;
 
 const express = require('express');
-const app = express;
+
+const app = express();
+
 // DONE: Include all of the static resources as an argument to app.use()
 app.use(express.static('./public'));
 
-app.get('*', function(request, response) {
-  // TODO: Using the response object, send the index.html file back to the user
+app.get('/new', function(request, response) {
+  console.log('new path');
+  response.sendFile('./public/new.html', {root: '.'});
 });
 
-// TODO: (STRETCH) Write a new route that will handle a request and send the new.html file back to the user
+app.get('*', function(request, response) {
+  response.sendFile('./public/index.html', {root: '.'})
+  // DONE: Using the response object, send the index.html file back to the user
+});
+
+
+// DONE: (STRETCH) Write a new route that will handle a request and send the new.html file back to the user
 
 app.listen(PORT, function() {
-  // TODO: Log to the console a message that lets you know which port your server has started on
+  console.log('Our app is being served on port 3000');
+  // DONE: Log to the console a message that lets you know which port your server has started on
 });
