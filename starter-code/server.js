@@ -21,7 +21,7 @@ app.get('/new', function(){
   response.sendFile('./new.hmtl', {root: '.'});
 });
 
-// TODO: (STRETCH) Write a new route that will handle a request and send the new.html file back to the user
+// DONE: (STRETCH) Write a new route that will handle a request and send the new.html file back to the user
 
 app.listen(PORT, function() {
   console.log('Our app is being served on port 3000');
