@@ -17,7 +17,7 @@ app.get('*', function(request, response) {
   // DONE: Using the response object, send the index.html file back to the user
 });
 
-app.get('/new', function(){
+app.get('/new', function(request, response) {
   response.sendFile('./new.hmtl', {root: '.'});
 });
 
