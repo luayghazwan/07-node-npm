@@ -13,11 +13,17 @@ const app = express;
 app.use(express.static('./public'));
 
 app.get('*', function(request, response) {
-  // TODO: Using the response object, send the index.html file back to the user
+  response.sendFile('./public/index.html', {root: '.'})
+  // DONE: Using the response object, send the index.html file back to the user
+});
+
+app.get('/new', function(){
+  response.sendFile('./new.hmtl', {root: '.'});
 });
 
 // TODO: (STRETCH) Write a new route that will handle a request and send the new.html file back to the user
 
 app.listen(PORT, function() {
-  // TODO: Log to the console a message that lets you know which port your server has started on
+  console.log('Our app is being served on port 3000');
+  // DONE: Log to the console a message that lets you know which port your server has started on
 });
