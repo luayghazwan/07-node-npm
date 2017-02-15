@@ -7,10 +7,7 @@
 
 const PORT = process.env.PORT || 3000;
 
-const express = require('express');
-const app = express;
-// DONE: Include all of the static resources as an argument to app.use()
-app.use(express.static('./public'));
+// TODO: Include all of the static resources as an argument to app.use()
 
 app.get('*', function(request, response) {
   // TODO: Using the response object, send the index.html file back to the user
